@@ -1,44 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Movie Search App
 
-## Available Scripts
+Movie Search is a React application that allows users to search for Movies based on the title. Movie Search app uses data from the The Movie Databse API.
 
-In the project directory, you can run:
+## Requirements
 
-### `npm start`
+NodeJS
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+From the terminal run
+`npm install`
 
-### `npm test`
+## Notable dependencies
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Axios
+- Antd
+- Craco
+- dayjs
+- Redux
+- React Redux
+- mode-sass
 
-### `npm run build`
+## Running the application
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once installed, you can run the application with the following command
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+`npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tests
 
-### `npm run eject`
+You can run unit test by entering the following into your terminal. Included is a single test that checks the Movie Database API api key, as well as the endpoints to search and load a specific movie.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+There is currently no tests for the components.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm test`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Challenges
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Time
+  I am a bit ambitious and I really want to show off my best work. I honestly spent maybe 8 hours on this project though some of it can be attributed to setting up my boilerplate. I wanted to demonstrate my use of redux though it may be overkill for this assignment
 
-## Learn More
+## Design Choice Reasoning
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- I think having the movie search results update in the background while you're typing is distracting. I opted instead to have an autocomplete search box that updates its options in a dropdown for the user to select. I hope that fulfills your requirement of having something visually update as the user is typing.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- The use of ANTD component library.
+  Initially I was going to code my own search input component but decided to use one from a component library instead. The reason why I chose to use a component from a library is that is more likely to be tested, particularly for accessibility. Other components I used include the Rating, buttons
+
+- The use of a form element to wrap the search input.
+  This is for usability and accessibility. I wanted the user to be able to update the movie listing search results when they pressed the "enter" and only update the avaiable options to select from the dropdown field as they typed.
+
+## What Can Be Improved?
+
+- Given time I would like to create a custom hook to memoize the data returned from the api calls into a hashmap so that hey can be accessed again without another api call to sace on resources.
+- I did not have the time to leverage useCallback and useMemo to optimize the rendering of components
+- I really wish I had more time to devote to the visual design of the application

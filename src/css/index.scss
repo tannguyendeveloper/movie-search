@@ -1,0 +1,9 @@
+@import "./reset.css";
+@import "./mixins.scss";
+
+.container {
+  margin: 0 0;
+  padding: 5px;
+  max-width: 1200px;
+  width: 100%;
+}
