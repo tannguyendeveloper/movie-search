@@ -42,19 +42,21 @@ There is currently no tests for the components.
 
 ## Design Choice Reasoning
 
-- I think having the movie search results update in the background while you're typing is distracting. I opted instead to have an autocomplete search box that updates its options in a dropdown for the user to select. I hope that fulfills your requirement of having something visually update as the user is typing.
+- I think having the movie search results update in the background while the user is typing is distracting. I opted instead to have an autocomplete search box that updates its options in a dropdown for the user to select. I hope that fulfills your requirement of having something visually update as the user is typing.
 
 - The use of ANTD component library.
-  Initially I was going to code my own search input component but decided to use one from a component library instead. The reason why I chose to use a component from a library is that is more likely to be tested, particularly for accessibility. Other components I used include the Rating, buttons
+  Initially I was going to code my own search input component but decided to use one from a component library instead. The reason why I chose to use a component from a library is that is more likely to be tested, particularly for accessibility. Other components I used include the Rating component and Modal
 
 - The use of a form element to wrap the search input.
   This is for usability and accessibility. I wanted the user to be able to update the movie listing search results when they pressed the "enter" and only update the avaiable options to select from the dropdown field as they typed.
 
-- The use of redux
-  Not necessary, but I just wanted to demonstrate my use of the lirbary for state management.
+- The use of Redux
+  Not necessary, but I just wanted to demonstrate my use of the library for state management. An alternative would be to use Reacts built in hooks useDispatch/useReducer
 
 ## What Can Be Improved?
 
 - Given time I would like to create a custom hook to memoize the data returned from the api calls into a hashmap so that hey can be accessed again without another api call to save on resources.
+
 - I did not have the time to leverage useCallback and useMemo to optimize the rendering of components
+
 - I really wish I had more time to devote to the visual design of the application

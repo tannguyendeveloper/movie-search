@@ -1,8 +1,12 @@
 @import "./reset.css";
 @import "./mixins.scss";
 
+body {
+  font-size: 1em;
+}
+
 .container {
-  margin: 0 0;
+  margin: 0 auto;
   padding: 5px;
   max-width: 1200px;
   width: 100%;
