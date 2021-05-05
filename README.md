@@ -50,8 +50,11 @@ There is currently no tests for the components.
 - The use of a form element to wrap the search input.
   This is for usability and accessibility. I wanted the user to be able to update the movie listing search results when they pressed the "enter" and only update the avaiable options to select from the dropdown field as they typed.
 
+- The use of redux
+  Not necessary, but I just wanted to demonstrate my use of the lirbary for state management.
+
 ## What Can Be Improved?
 
-- Given time I would like to create a custom hook to memoize the data returned from the api calls into a hashmap so that hey can be accessed again without another api call to sace on resources.
+- Given time I would like to create a custom hook to memoize the data returned from the api calls into a hashmap so that hey can be accessed again without another api call to save on resources.
 - I did not have the time to leverage useCallback and useMemo to optimize the rendering of components
 - I really wish I had more time to devote to the visual design of the application

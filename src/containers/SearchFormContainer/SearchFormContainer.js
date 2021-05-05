@@ -1,7 +1,7 @@
 import { cloneElement, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import dayjs from "dayjs";
 import MovieDatabaseAPI from "@apis/MovieDatabaseAPI";
-import SearchForm from "@components/SearchForm";
 import { debounce } from "@utils";
 
 const SearchFormContainer = ({ children }) => {
@@ -18,10 +18,11 @@ const SearchFormContainer = ({ children }) => {
     dispatch({ type: "SET_QUERY", query: data });
     const response = await MovieDatabaseAPI.searchMovies(data);
     const options = response.results.map((option) => {
+      const releaseDate = dayjs(option?.release_date).format("MM/DD/YYYY");
       return {
         id: option.id,
         key: option.id,
-        label: `${option.title} ${option.release_date ? `(${option.release_date})` : ""
+        label: `${option.title} ${option.release_date ? `(${releaseDate})` : ""
           }`,
         movie: option,
         value: `${option.title}`,
